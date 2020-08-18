@@ -9,6 +9,8 @@ class BattlesController < ApplicationController
 
   def create
     @battle = Battle.create(battle_params)
+    @battle.opponent = Pokemon.all.sample
+    @battle.save
     redirect_to battle_path(@battle)
   end
 
