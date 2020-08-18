@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type_id: 1
+  trainer_id: 1
+  species: MyString
+  speed: 1
+  attack: 1
+  hp: 1
+  defence: 1
+
+two:
+  type_id: 1
+  trainer_id: 1
+  species: MyString
+  speed: 1
+  attack: 1
+  hp: 1
+  defence: 1
