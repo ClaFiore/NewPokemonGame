@@ -4,4 +4,17 @@ class Pokemon < ApplicationRecord
     belongs_to :trainer, optional: true
     belongs_to :type
     validates :species, uniqueness: {case_sensitive: false}
+
+    def faint?
+        if self.hp <= 0 
+            self.hp = 0
+            return true
+         else 
+            return false
+         end
+    end
+
+    
+
+
 end
