@@ -93,12 +93,16 @@ class Battle < ApplicationRecord
         self.opponent.attack -= self.user.defence
     end
 
-    def user_current_hp
+    def user_current_hp 
         self.user.hp -= opponent_final_damage
+        self.user.faint?
+        self.user.hp
     end
 
     def opponent_current_hp 
         self.opponent.hp -= user_final_damage 
+        self.opponent.faint?
+        self.opponent.hp
     end
 
     def attack
