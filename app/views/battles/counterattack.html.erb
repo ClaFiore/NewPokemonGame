@@ -4,8 +4,29 @@
 
 
 
-<% if @attacker.hp == 0 || @defendant.hp == 0 %>
-<%= render partial: "gameover" %>
+
+<%= "#{@attacker.species} is attacking  #{@defendant.species}" %> <br>
+<% if @attacker == @battle.user && @battle.user_strong_against? %>
+    <%= "#{@attacker.species} is a #{@attacker.type.name} type and its attack is super effective against #{@defendant.type.name} types" %>
+<% elsif @attacker == @battle.opponent && @battle.opponent_strong_against? %>
+    <%= "#{@attacker.species} is a #{@attacker.type.name} type and its attack is super effective against #{@defendant.type.name} types" %> 
+<% end %><br>
+
+
+
+<%= "#{@defendant.species} defended #{@defendant.defence} damage" %> <br>
+<%= "#{@defendant.species} took" %>
+
+<% if @defendant == @battle.user %>
+    <%= "#{@battle.opponent_final_damage} damage" %>
+<% else %>
+    <%= "#{@battle.user_final_damage} damage" %>
+<% end %> <br>
+
+<%= "#{@defendant.species}'s health dropped down to #{@defendant.hp}" %> <br>
+<% if @defendant.hp == 0 %>
+    <h2><%= "#{@attacker.species} WINS!" %></h2>
+    <%= render partial: "gameover" %>
 <% else %>
 <%= link_to "Next Attack", attack_path(@battle) %>
 <% end %>

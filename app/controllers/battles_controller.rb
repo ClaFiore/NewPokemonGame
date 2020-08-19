@@ -31,7 +31,15 @@ class BattlesController < ApplicationController
 
   def counterattack
     @battle = Battle.find(params[:format])
-    @battle.counterattack
+    if @battle.user_attack_first? == true
+      @defendant = @battle.user
+      @attacker = @battle.opponent
+      @battle.user_current_hp
+   else
+     @attacker = @battle.user
+     @defendant = @battle.opponent
+     @battle.opponent_current_hp
+   end
     render :counterattack
   end
 
