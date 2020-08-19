@@ -85,12 +85,20 @@ class Battle < ApplicationRecord
 
     def user_final_damage
         super_effective_attack
-        self.user.attack -= self.opponent.defence
+        if self.opponent.defence >= self.user.attack
+            1
+        else
+            self.user.attack - self.opponent.defence
+        end
     end
 
     def opponent_final_damage
         super_effective_attack
-        self.opponent.attack -= self.user.defence
+        if self.user.defence >= self.opponent.attack
+            1
+        else
+            self.opponent.attack - self.user.defence
+        end
     end
 
     def user_current_hp 

@@ -1,0 +1,31 @@
+<%= render partial: "arena" %>
+
+<h1> Turn x </h1> <!-- (turn x = 1), increase turn by 2 next time we are in the attack -->
+
+<%= "#{@attacker.species} is attacking  #{@defendant.species}" %> <br>
+<% if @attacker == @battle.user && @battle.user_strong_against? %>
+    <%= "#{@attacker.species} is a #{@attacker.type} type and its attack is super effective against #{@defendant.type} types" %>
+<% elsif @attacker == @battle.opponent && @battle.opponent_strong_against? %>
+    <%= "#{@attacker.species} is a #{@attacker.type} type and its attack is super effective against #{@defendant.type} types" %>
+<% end %>
+
+
+
+<%= "#{@defendant.species} defended #{@defendant.defence} damage" %> <br>
+<%= "#{@defendant.species} took" %>
+
+<% if @defendant == @battle.user %>
+    <%= "#{@battle.opponent_final_damage} damage" %>
+<% else %>
+    <%= "#{@battle.user_final_damage} damage" %>
+<% end %> <br>
+
+<%= "#{@defendant.species}'s health dropped down to #{@defendant.hp}" %> <br>
+<% if @defendant.hp == 0 %>
+    <h2><%= "#{@attacker.species} WINS!" %></h2>
+    <%= render partial: "gameover" %>
+<% else %>
+    <%= link_to "Counterattack", counterattack_path(@battle) %>
+<% end %>
+
+    

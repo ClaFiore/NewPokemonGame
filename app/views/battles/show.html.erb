@@ -1,18 +1,4 @@
-<h1> WELCOME TO THE ARENA </h1>
-
-<h2> <%= @battle.user.species %> VS <%= @battle.opponent.species %> </h2> 
-
-<h2> Your pokemon: <%= @battle.user.species %></h2> 
-<h3> Type: <%= @battle.user.type.name %> </h3>
-<h3> Speed: <%= @battle.user.speed %> </h3> 
-<h3> Health Points: <%= @battle.user.hp %> </h3> 
-<h3> Attack: <%= @battle.user.attack %> </h3> 
-<h3> Defence: <%= @battle.user.defence %> </h3> <br>
+<%= render partial: "arena" %>
 
 
-<h2> Your opponent's pokemon: <%= @battle.opponent.species  %> </h2> 
-<h3> Type: <%= @battle.opponent.type.name %> </h3>
-<h3> Speed: <%= @battle.opponent.speed %> </h3> 
-<h3> Health Points: <%= @battle.opponent.hp %> </h3> 
-<h3> Attack: <%= @battle.opponent.attack %> </h3> 
-<h3> Defence: <%= @battle.opponent.defence %> </h3> <br>
+<%= link_to "Attack", attack_path(@battle) %>
