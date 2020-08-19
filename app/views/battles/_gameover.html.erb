@@ -1,3 +1,7 @@
 <h1> GAME OVER </h1>
 
-<%= link_to "Start New Game", home_path %>
+<% if @battle.user.hp == 0  %>
+    <%= link_to "Start New Game", pokemon_path(@battle.user), method: :delete %>
+<% else %>
+    <%= link_to "Start New Game", pokemon_path(@battle.opponent), method: :delete %>
+<% end %>

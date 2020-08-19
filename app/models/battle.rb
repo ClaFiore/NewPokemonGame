@@ -1,7 +1,7 @@
 class Battle < ApplicationRecord
     belongs_to :user, class_name: 'Pokemon'
     belongs_to :opponent, class_name: 'Pokemon'
-    validates_uniqueness_of :user, scope: :opponent
+    validates_uniqueness_of :user, scope: :opponent_id
 
 
     def user_attack_first? #return true or false

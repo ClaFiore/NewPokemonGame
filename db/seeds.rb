@@ -23,8 +23,8 @@ types << Type.create(name: "Rock")
 ids = types.map {|type| type.id}
 
 
-10.times do
-Pokemon.create(type_id: ids.sample, species: Faker::Games::Pokemon.name, speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(1..10))
+20.times do
+Pokemon.create(type_id: ids.sample, species: Faker::Games::Pokemon.name, speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10))
 end
 
 

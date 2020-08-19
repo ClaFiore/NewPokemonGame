@@ -1,9 +1,9 @@
 <%= render partial: "arena" %>
 
-<h1> Turn x+1 </h1> <!-- (turn x = 1), increase turn by +2 next time we are in the counterattack -->
 
 
 
+<h1> Counter Attack! </h1>
 
 <%= "#{@attacker.species} is attacking  #{@defendant.species}" %> <br>
 <% if @attacker == @battle.user && @battle.user_strong_against? %>
