@@ -17,7 +17,7 @@ class BattlesController < ApplicationController
 
   def attack
     @battle = Battle.find(params[:format])
-      if @battle.user_attack_first? == true
+      if @battle.user_attack_first? 
          @defendant = @battle.opponent
          @attacker = @battle.user
          @battle.opponent_current_hp
@@ -26,12 +26,14 @@ class BattlesController < ApplicationController
         @defendant = @battle.user
         @battle.user_current_hp
       end
+      newhp = @defendant.hp
+      @defendant.update_attributes(:hp => newhp)
     render :attack
   end
 
   def counterattack
     @battle = Battle.find(params[:format])
-    if @battle.user_attack_first? == true
+    if @battle.user_attack_first? 
       @defendant = @battle.user
       @attacker = @battle.opponent
       @battle.user_current_hp
@@ -40,6 +42,8 @@ class BattlesController < ApplicationController
      @defendant = @battle.opponent
      @battle.opponent_current_hp
    end
+   newhp = @defendant.hp
+   @defendant.update_attributes(:hp => newhp)
     render :counterattack
   end
 

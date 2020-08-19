@@ -1,6 +1,7 @@
 class Battle < ApplicationRecord
     belongs_to :user, class_name: 'Pokemon'
     belongs_to :opponent, class_name: 'Pokemon'
+    validates_uniqueness_of :user, scope: :opponent
 
 
     def user_attack_first? #return true or false
@@ -77,15 +78,18 @@ class Battle < ApplicationRecord
 
     def super_effective_attack
         if user_strong_against? == true
-            self.user.attack *= 2
+            self.user.attack * 2
         elsif opponent_strong_against? == true
-            self.opponent.attack *= 2
+            self.opponent.attack * 2
         end
     end
 
     def user_final_damage
-        super_effective_attack
-        if self.opponent.defence >= self.user.attack
+        if user_strong_against? == true && self.opponent.defence >= super_effective_attack
+            1
+        elsif user_strong_against? == true && self.opponent.defence < super_effective_attack
+            super_effective_attack - self.opponent.defence
+        elsif self.opponent.defence >= self.user.attack
             1
         else
             self.user.attack - self.opponent.defence
@@ -93,8 +97,11 @@ class Battle < ApplicationRecord
     end
 
     def opponent_final_damage
-        super_effective_attack
-        if self.user.defence >= self.opponent.attack
+        if opponent_strong_against? == true && self.user.defence >= super_effective_attack
+            1
+        elsif opponent_strong_against? == true && self.user.defence < super_effective_attack
+            super_effective_attack - self.user.defence
+        elsif self.user.defence >= self.opponent.attack
             1
         else
             self.opponent.attack - self.user.defence
@@ -113,20 +120,31 @@ class Battle < ApplicationRecord
         self.opponent.hp
     end
 
-    def attack
-         if user_attack_first? == true
-            opponent_current_hp
-         else
-            user_current_hp
-         end
+    def attack_turn
+        turn = 1
+
+    end
+
+    def user_poke_hp
+        poke_hp = self.user.hp - (opponent_final_damage * attack_turn)
+
     end
 
 
-    def counterattack
-        if user_attack_first? == true 
-            user_current_hp
-        else 
-            opponent_current_hp
-        end
-    end
+
+    # def attack
+    #      if user_attack_first? == true
+    #         opponent_current_hp
+    #      else
+    #         user_current_hp
+    #      end
+    # end
+
+    # def counterattack
+    #     if user_attack_first? == true 
+    #         user_current_hp
+    #     else 
+    #         opponent_current_hp
+    #     end
+    # end
 end

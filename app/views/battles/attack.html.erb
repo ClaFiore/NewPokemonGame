@@ -4,9 +4,11 @@
 
 <%= "#{@attacker.species} is attacking  #{@defendant.species}" %> <br>
 <% if @attacker == @battle.user && @battle.user_strong_against? %>
-    <%= "#{@attacker.species} is a #{@attacker.type.name} type and its attack is super effective against #{@defendant.type.name} types" %>
+    <%= "#{@attacker.species} is a #{@attacker.type.name} type and its attack is super effective against #{@defendant.type.name} types" %> <br>
+    <%= "#{@attacker.species}'s power has doubled" %>
 <% elsif @attacker == @battle.opponent && @battle.opponent_strong_against? %>
-    <%= "#{@attacker.species} is a #{@attacker.type.name} type and its attack is super effective against #{@defendant.type.name} types" %>
+    <%= "#{@attacker.species} is a #{@attacker.type.name} type and its attack is super effective against #{@defendant.type.name} types" %> <br>
+    <%= "#{@attacker.species}'s power has doubled" %>
 <% end %><br>
 
 
