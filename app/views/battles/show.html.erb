@@ -1,4 +1,4 @@
 <%= render partial: "arena" %>
 
 
-<%= link_to "Attack", attack_path(@battle) %>
+<h2 class="attack_button"><%= button_to "Attack", attack_path(@battle), method: :get %></h2>

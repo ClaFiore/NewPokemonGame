@@ -1,10 +1,6 @@
 <%= render partial: "arena" %>
 
-
-
-
-<h1> Counter Attack! </h1>
-
+<h3 class="attack">
 <%= "#{@attacker.species} is attacking  #{@defendant.species}" %> <br>
 <% if @attacker == @battle.user && @battle.user_strong_against? %>
     <%= "#{@attacker.species} is a #{@attacker.type.name} type and its attack is super effective against #{@defendant.type.name} types" %> <br>
@@ -26,9 +22,11 @@
 <% end %> <br>
 
 <%= "#{@defendant.species}'s health dropped down to #{@defendant.hp}" %> <br>
+<br>
 <% if @defendant.hp == 0 %>
-    <h2><%= "#{@attacker.species} WINS!" %></h2>
+    <%= "#{@attacker.species} WINS!" %>
     <%= render partial: "gameover" %>
 <% else %>
-<%= link_to "Next Attack", attack_path(@battle) %>
+<%= button_to "Next Attack", attack_path(@battle), method: :get %>
 <% end %>
+</h3>

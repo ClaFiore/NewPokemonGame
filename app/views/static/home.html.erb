@@ -1,5 +1,8 @@
-<h1> POKEMON BATTLE SIMULATOR </h1>
+<div class="pokelogo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1024px-International_Pok%C3%A9mon_logo.svg.png">
+</div>
 
-<%= button_to "All Pokemon Ready For Battle", pokemons_path, method: :get %> <br>
-<%= button_to "All Trainers", trainers_path, method: :get %> <br>
-<%= button_to "New Battle", new_battle_path, method: :get %>
+<table class="home_table">
+
+<tr><td><h3><%= button_to "All Pokemon Ready For Battle", pokemons_path, method: :get %></h3></td>
+<td><h3><%= button_to "All Trainers", trainers_path, method: :get %></h3></td>
+<td><h3><%= button_to "New Battle", new_battle_path, method: :get %></h3></td></tr>

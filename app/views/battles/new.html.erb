@@ -1,11 +1,11 @@
-<h1>New Battle</h1>
 
+<h1 style="font-family: verdana; padding: 0 100px; justify-content: center;">
 <%= form_for @battle do |f| %>
+    <%= f.label "New Battle" %> <br> <br>
     <%= f.label :user_id, "Pick your Pokemon" %> 
     <%= f.collection_select :user_id, Pokemon.all, :id, :species %><br>
-    
-    <!-- <%= f.label :opponent_id, "Pick your Opponent" %>
-    <%= f.collection_select :opponent_id, Pokemon.all, :id, :species %><br> -->
-
+        <br>
+        <br>
     <%= f.submit "Start Battle" %>
     <% end %>
+</h1>
