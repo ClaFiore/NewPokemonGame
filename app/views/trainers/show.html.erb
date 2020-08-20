@@ -1,0 +1,6 @@
+<h1> <%= @trainer.name %>'s Team </h1>
+<ol>
+<% @trainer.pokemons.each do |p| %>
+  <li>  <%= link_to p.species, pokemon_path(p) %> </li>
+<% end %>
+</ol>

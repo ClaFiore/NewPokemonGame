@@ -1,0 +1,11 @@
+<h1> Team Builder for <%= @trainer.name %> </h1>
+<% if @trainer.errors.any? %>
+    <% @trainer.errors.full_messages.each do |message| %>
+        <%= message %>
+    <% end %> 
+<% end %>
+ <%= form_for @trainer do |f| %>
+    <%= f.label :pokemons, "Pick 6 Pokemon for your team" %> <br> 
+    <%= f.collection_check_boxes :pokemon_ids, Pokemon.all, :id, :species %>
+    <%= f.submit "Build Team" %>
+<% end %>

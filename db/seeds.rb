@@ -28,7 +28,7 @@ Pokemon.create(type_id: ids.sample, species: Faker::Games::Pokemon.name, speed: 
 end
 
 
-trainers = ["Red/Ash", "Blue/Gary", "Brock", "Misty", "Jessie", "James", "May", "Lucas", "Dawn", "Nate"]
+trainers = ["Ash", "Gary", "Brock", "Misty", "Jessie", "James", "May", "Lucas", "Dawn", "Nate"]
 
 10.times do
 Trainer.create(name: trainers.sample)
