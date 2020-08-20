@@ -1,1 +1,7 @@
-Index
+<h1> All Trainers </h1>
+
+<ul>
+    <% @trainers.each do |t| %>
+    <li><%= link_to t.name, trainer_path(t) %></li>
+    <%end %>
+</ul>
