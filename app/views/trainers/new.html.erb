@@ -1,26 +1,30 @@
-<div style="padding: 80px 100px 0 0; justify-content: center; text-align: center;">
-<h1 class="titles"> Create New Trainer </h1>
+<div style="padding: 50px 100px; justify-content: center; text-align: center;">
+
+        <h1 class="titles"> Create New Trainer </h1>
+
+                    <% if @trainer.errors.any? %>
+                        <% @trainer.errors.full_messages.each do |message| %>
+                            <div class="ui error message"><h5 style="color: red;"> <%= message %> </h5></div>
+                        <% end %> 
+                    <% end %>
+       
+                </br>
+
 
 <div class="ui form" style="justify-content: center; text-align: center; padding: 100px, margin: auto;">
-        <div class="ui form error">
-        <div class="field">
-            <% if @trainer.errors.any? %>
-                <% @trainer.errors.full_messages.each do |message| %>
-                    <div class="ui error message"><h5 style="color: red;"> <%= message %> </h5></div>
-                <% end %> 
-            <% end %>
-            </div>
-        </div>
-        </br>
+
 <%= form_for @trainer do |f| %>
-   
+    <div class="field">
         <%= f.label :name %>
         <%= f.text_field :name %>
-   
+   </div>
+   <div class="field">
         <%= f.label :image %>
         <%= f.text_field :image %> <br>
-   
+   </div>
     <%= f.submit "Create Trainer", class: "homebutton"%>
     <% end %>
 
-</div>
+</form>
+
+<img style="float: bottom; padding: 30px 70px; vertical-align: bottom; horizontal-align: center; width: 65%;" src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimages-wixmp-ed30a86b8c4ca887773594c2.wixmp.com%2Ff%2F8bcbac46-c322-4678-9738-e08774e90a1e%2Fddatef3-6b70f60f-7d1c-49de-8841-b12d133251a9.png%3Ftoken%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvOGJjYmFjNDYtYzMyMi00Njc4LTk3MzgtZTA4Nzc0ZTkwYTFlXC9kZGF0ZWYzLTZiNzBmNjBmLTdkMWMtNDlkZS04ODQxLWIxMmQxMzMyNTFhOS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.uqxhXKNLa2r-0SQhO4-x2eE6eieUQxIFt0Ra9GExfNg">

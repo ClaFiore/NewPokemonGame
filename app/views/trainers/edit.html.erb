@@ -1,6 +1,7 @@
 <div style="padding: 20px 100px; justify-content: center;">
 
 <h1 class="titles"> Team Builder for <%= @trainer.name.upcase %> </h1>
+<h1> </h1>
 <div class="ui form">
         <div class="ui form error">
         <div class="field">
@@ -24,7 +25,9 @@
     <% end %> <br>
 
 </div>
-
+<br>
+<h1> </h1>
+<br>
 <div class="ui grid">
     <% Pokemon.all.each do |p| %>
         <div class="two wide column"><img style="display:block; width: 60%" src=<%= p.image%>></div>
