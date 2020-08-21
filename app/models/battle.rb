@@ -4,7 +4,7 @@ class Battle < ApplicationRecord
     validates_uniqueness_of :user, scope: :opponent_id
 
 
-    def user_attack_first? #return true or false
+    def user_attack_first? #return true or fals1
         if self.user.speed >= self.opponent.speed
             return true
         else 
@@ -12,8 +12,8 @@ class Battle < ApplicationRecord
         end
     end
 
-    def user_strong_against?
-        if self.user.type.name == "Water" && self.opponent.type.name == "Fire" || self.user.type.name == "Water" && self.opponent.type.name == "Rock" || self.user.type.name == "Water" && self.opponent.type.name == "Ground"
+    def user_move_strong_against?
+        if self.user.move.type.name == "Water" && self.opponent.type.name == "Fire" || self.user.type.name == "Water" && self.opponent.type.name == "Rock" || self.user.type.name == "Water" && self.opponent.type.name == "Ground"
             return true
         elsif self.user.type.name == "Fire" && self.opponent.type.name == "Grass" || self.user.type.name == "Fire" && self.opponent.type.name == "Ice" || self.user.type.name == "Fire" && self.opponent.type.name == "Bug" 
             return true
@@ -44,8 +44,8 @@ class Battle < ApplicationRecord
         end     
     end
 
-    def opponent_strong_against?
-        if self.opponent.type.name == "Water" && self.user.type.name == "Fire" || self.opponent.type.name == "Water" && self.user.type.name == "Rock" || self.opponent.type.name == "Water" && self.user.type.name == "Ground"
+    def opponent_move_strong_against?
+        if self.opponent.type.move == "Water" && self.user.type.name == "Fire" || self.opponent.type.name == "Water" && self.user.type.name == "Rock" || self.opponent.type.name == "Water" && self.user.type.name == "Ground"
             return true
         elsif self.opponent.type.name == "Fire" && self.user.type.name == "Grass" || self.opponent.type.name == "Fire" && self.user.type.name == "Ice" || self.opponent.type.name == "Fire" && self.user.type.name == "Bug" 
             return true
@@ -122,15 +122,11 @@ class Battle < ApplicationRecord
 
     def attack_turn
         turn = 1
-
     end
 
     def user_poke_hp
         poke_hp = self.user.hp - (opponent_final_damage * attack_turn)
-
     end
-
-
 
     # def attack
     #      if user_attack_first? == true

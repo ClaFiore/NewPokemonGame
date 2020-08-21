@@ -1,4 +1,3 @@
 class Type < ApplicationRecord
-    has_many :pokemons
-    
+    belongs_to :move, optional: true
 end
