@@ -15,13 +15,13 @@
         </br>
     <%= form_for @trainer do |f| %>
         <div class="fields">
-            <h4><%= f.label :pokemons,  "Pick up to 6 Pokemon for your team:" %></h4>
+            <h4><%= f.label :pokemons,  "Pick up to 6 Pokémon for your team:" %></h4>
             <div class="field">
                     <h4><%= f.collection_check_boxes :pokemon_ids, Pokemon.all, :id, :species %></h4> 
             </div>
         </div>
      
-        <h4><%= f.submit "Catch Pokemon", class: "homebutton" %></h4> <br>
+        <h4><%= f.submit "Catch Pokémon", class: "homebutton" %></h4> <br>
     <% end %> <br>
 
 </div>

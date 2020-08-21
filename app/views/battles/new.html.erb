@@ -6,7 +6,7 @@
 </div>
 <div style="font-family: verdana; padding: 0 0; text-align: center;">
             <%= form_for @battle do |f| %>
-            <%= f.label :user_id, "Pick your Pokemon" %> 
+            <%= f.label :user_id, "Pick your Pokémon" %> 
             <%= f.collection_select :user_id, Pokemon.all, :id, :species %>
             <%= f.submit "Start Battle", class: "homebutton" %>
             <% end %>

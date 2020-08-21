@@ -16,7 +16,9 @@ class Pokemon < ApplicationRecord
 
 
     def self.reset_health(pokemon) 
-        pokemon.hp = rand(5..10)
-        pokemon.save
+        Pokemon.all.each do |pokemon|
+            pokemon.hp = 10
+            pokemon.save
+        end
     end
 end
