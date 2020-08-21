@@ -13,9 +13,10 @@ class Pokemon < ApplicationRecord
             return false
          end
     end
+
+
     def self.reset_health(pokemon) 
-        
-        pokemon.hp = rand(1..10)
+        pokemon.hp = rand(5..10)
         pokemon.save
     end
 end
