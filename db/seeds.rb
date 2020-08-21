@@ -31,17 +31,18 @@ Pokemon.create(type_id: flying.id, species: "Pidgeot", speed: rand(1..10), defen
 Pokemon.create(type_id: fighting.id, species: "Machamp", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://img.pngio.com/068-machamp-by-briannabellerose-on-deviantart-machamp-png-662_852.png")
 Pokemon.create(type_id: electric.id, species: "Pikachu", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://cdn.bulbagarden.net/upload/1/17/025Pikachu-Original.png")
 Pokemon.create(type_id: ground.id, species: "Cubone", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://img.pngio.com/cubone-pokken-tournament-wiki-cubone-png-278_311.png")
-Pokemon.create(type_id: ice.id, species: "Jynx", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://pokemon3d.net/wiki/images/e/e2/Jynx.png")
+Pokemon.create(type_id: ice.id, species: "Jynx", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://static.pokemonpets.com/images/monsters-images-800-800/2124-Shiny-Jynx.png")
 Pokemon.create(type_id: normal.id, species: "Ditto", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://cdn.bulbagarden.net/upload/thumb/3/36/132Ditto.png/250px-132Ditto.png")
 Pokemon.create(type_id: poison.id, species: "Nidoqueen", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://static.pokemonpets.com/images/monsters-images-800-800/31-Nidoqueen.png")
 Pokemon.create(type_id: psychic.id, species: "Mewtwo", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://vignette.wikia.nocookie.net/ssb/images/d/d3/Mewtwo.png/revision/latest?cb=20200108012317")
 Pokemon.create(type_id: rock.id, species: "Onix", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://pokemon3d.net/wiki/images/b/b2/Onix.png")
-Pokemon.create(type_id: normal.id, species: "Meowth", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://vignette.wikia.nocookie.net/pokemon/images/2/2b/Rocket_Meowth.png/revision/latest/top-crop/width/360/height/450?cb=20120204034930")
+Pokemon.create(type_id: normal.id, species: "Meowth", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://www.uokpl.rs/fpng/f/217-2173750_pokemon-meowth-png.png")
+Pokemon.create(type_id: normal.id, species:"Snorlax", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8f9c3ba7-babf-4b8c-a4cd-7d54c0dd4ebb/dclyfvn-6caf442b-430c-49c6-bdae-2162bd1c60d3.png/v1/fill/w_864,h_924,strp/143_____snorlax_by_uraharataichou_dclyfvn-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMDk1IiwicGF0aCI6IlwvZlwvOGY5YzNiYTctYmFiZi00YjhjLWE0Y2QtN2Q1NGMwZGQ0ZWJiXC9kY2x5ZnZuLTZjYWY0NDJiLTQzMGMtNDljNi1iZGFlLTIxNjJiZDFjNjBkMy5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.M3OjpVt4v5O8LP_5bTt4vXk4FsaAozSfrAkvwcMhmAU")
+Pokemon.create(type_id: normal.id, species:"Eevee", speed: rand(1..10), defence: rand(1..5), attack: rand(1..10), hp: rand(5..10), image:"https://www.vippng.com/png/full/243-2436730_this-is-the-shiny-eevee-of-good-fortune.png")
 
 
 
-
-Trainer.create(name:"Ash", image: "http://www.pngmart.com/files/12/Pokemon-Ash-Ketchum-PNG-Transparent-Image.png")
+Trainer.create(name:"Ash", image: "http://www.pngmart.com/files/12/Pokemon-Ash-Ketchum-Transparent-PNG.png")
 Trainer.create(name:"Gary", image: "https://www.pikpng.com/pngl/b/581-5814314_gary-oak-png-pokemon-gary-png-clipart.png")
 Trainer.create(name:"Brock", image: "https://img.pngio.com/image-result-for-pokemon-anime-original-series-brock-brock-brock-pokemon-png-400_973.png")
 Trainer.create(name:"Misty", image: "https://www.jing.fm/clipimg/full/6-66438_and-clipped-by-cartoon-clipart-misty-pokemon-png.png")
@@ -50,5 +51,3 @@ Trainer.create(name:"James", image: "https://cdn.bulbagarden.net/upload/thumb/1/
 Trainer.create(name:"Dawn", image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2b11364d-88a1-48c7-9530-e225cf7aff48/d56jq6m-95a07cfe-f64f-4534-a3ef-53472653adf8.png/v1/fill/w_337,h_600,strp/dawn_in_pokemon_png_by_cutegirlnextdoor_d56jq6m-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD02MDAiLCJwYXRoIjoiXC9mXC8yYjExMzY0ZC04OGExLTQ4YzctOTUzMC1lMjI1Y2Y3YWZmNDhcL2Q1NmpxNm0tOTVhMDdjZmUtZjY0Zi00NTM0LWEzZWYtNTM0NzI2NTNhZGY4LnBuZyIsIndpZHRoIjoiPD0zMzcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.39PKbASHajVdIJeH7jbV-yV4BKup1-ZG1DjoFpxUH6Q")
 Trainer.create(name:"Kris", image: "https://cdn.bulbagarden.net/upload/thumb/2/25/Goh_JN.png/150px-Goh_JN.png")
 Trainer.create(name:"Claudia", image: "https://cdn.bulbagarden.net/upload/3/38/Diamond_Pearl_Cynthia.png")
-Trainer.create(name:"Andrew",image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e77a9a9e-4451-4271-815f-de4a4c283d86/d41ceqe-959ec5fc-5b88-4c0e-822f-06803dc8d141.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZTc3YTlhOWUtNDQ1MS00MjcxLTgxNWYtZGU0YTRjMjgzZDg2XC9kNDFjZXFlLTk1OWVjNWZjLTViODgtNGMwZS04MjJmLTA2ODAzZGM4ZDE0MS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.UwQ1F6KRYZuiFObb8v3qg1ixY3Mx5xc0DwUtbyjBZjI")
-

@@ -1,0 +1,26 @@
+<div style="padding: 80px 100px 0 0; justify-content: center; text-align: center;">
+<h1 class="titles"> Create New Trainer </h1>
+
+<div class="ui form" style="justify-content: center; text-align: center; padding: 100px, margin: auto;">
+        <div class="ui form error">
+        <div class="field">
+            <% if @trainer.errors.any? %>
+                <% @trainer.errors.full_messages.each do |message| %>
+                    <div class="ui error message"><h5 style="color: red;"> <%= message %> </h5></div>
+                <% end %> 
+            <% end %>
+            </div>
+        </div>
+        </br>
+<%= form_for @trainer do |f| %>
+   
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+   
+        <%= f.label :image %>
+        <%= f.text_field :image %> <br>
+   
+    <%= f.submit "Create Trainer", class: "homebutton"%>
+    <% end %>
+
+</div>
