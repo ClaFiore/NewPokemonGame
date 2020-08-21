@@ -1,7 +1,15 @@
-<h1> All Trainers </h1>
+<div style="justify-content: center; padding: 20px 50px;">
+<h1 class="titles" style="text-align: center;"> All Trainers </h1> 
+<h4 style="text-align: center;"><%= button_to "Homepage", home_path, method: :get, class: "homebutton" %></h4>
+</div>
 
-<ul>
-    <% @trainers.each do |t| %>
-    <li><%= link_to t.name, trainer_path(t) %></li>
-    <%end %>
-</ul>
+<div style="justify-content: center; padding: 50px 50px;">
+
+<div class="ui grid">
+        <% @trainers.each do |t| %>       
+        <div class="two wide column"> <h4 class="link"><%= link_to t.name, trainer_path(t) %></h4> <img style="justify-content: center; align-items: center; display:block; object-fit: contain; width: 70%; height: 50%;" src=<%= t.image%> </div>
+        </div>
+        <%end %>
+</div>
+</div>
+</div>

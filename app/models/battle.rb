@@ -1,7 +1,15 @@
 class Battle < ApplicationRecord
     belongs_to :user, class_name: 'Pokemon'
     belongs_to :opponent, class_name: 'Pokemon'
-    validates_uniqueness_of :user, scope: :opponent_id
+    validates_uniqueness_of :user_id, scope: :opponent_id
+   
+    validate :disallow_self_referential_pokemon
+
+  def disallow_self_referential_pokemon
+    if user_id == opponent_id
+      errors.add(:opponent_id, 'cannot challenge same pokemon')
+    end
+  end
 
 
     def user_attack_first? #return true or false

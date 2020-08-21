@@ -1,9 +1,14 @@
-<h1>All Pokemon</h1>
+<h1 class="titles", style="padding: 20px 100px; justify-content: center; text-align: center;">All Pokémon</h1>
 
-<ul>
-<% @pokemons.each do |p| %>
-    <li><%= link_to p.species, pokemon_path(p) %></li>
+<div style="justify-content: center; padding: 20px 50px;">
+
+<div class="ui grid">
+    <% @pokemons.each do |p| %>
+        <div class="two wide column"><h4><%=link_to p.species, pokemon_path(p), class: "link" %></h4><img style="display:block; width: 60%" src=<%= p.image%>></div>
+  
     <% end %>
-    </ul>
+</div>
 
-    <%= link_to "Homepage", home_path %>
+</div>
+<br>
+    <h3 style="padding: 0 110px; text-align: center;"><%= button_to "Homepage", home_path, method: :get, class: "homebutton" %></h3>

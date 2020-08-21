@@ -1,8 +1,18 @@
-<h1><%= @pokemon.species %></h1>
+
+<img style="float: right; padding: 10px 100px; vertical-align: top; width: 50%;" src=<%= @pokemon.image %>>
+<h1 class="titles" style="padding: 20px 100px; justify-content: center;"><%= @pokemon.species %></h1>
+
+<div style="padding: 10px 100px;">
+
 
 <h3> Type: <%= @pokemon.type.name %> </h3>
 <h3> Speed: <%= @pokemon.speed %> </h3>
 <h3> Health Points: <%= @pokemon.hp %> </h3>
 <h3> Attack: <%= @pokemon.attack %> </h3>
-<h3> Defence: <%= @pokemon.defence %> </h3>
-<img src=<%= @pokemon.image %>>
+<h3> Defence: <%= @pokemon.defence %> </h3> <br>
+<br>
+
+
+<h3><%= button_to "All Pokemon", pokemons_path, method: :get, class: "homebutton"%></h3>
+
+</div>

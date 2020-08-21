@@ -1,43 +1,51 @@
-<div class="ui container">
-<img class="pokebattleimg" src=https://www.pokemonbattlearena.net/members/theme/assets/IMG/pba_logo.png>
+<div class="arena_battle_image">
+<img  src=https://www.pokemonbattlearena.net/members/theme/assets/IMG/pba_logo.png>
+</div>
+
 
 <h2 class="vs"> <%= @battle.user.species %> VS <%= @battle.opponent.species %> </h2> 
+<div style="width:98%; margin:1%;">
 
-    <table>
-    <tr> 
-        <td> <h2> <%= @battle.user.species %></h2> </td>
-        <td> <h2> <%= @battle.opponent.species  %> </h2> </td>
-    </tr>
-    <tr> 
-        <td> <h1> </h1> </td>
-        <td> <h1> </h1> </td>
+
+<div class="ui container">
+    <table class="center">
+    <!-- <tr> 
+        <td class="td"> <h3> <%= @battle.user.species %></h3> </td>
+        <td class="td"> <h3> <%= @battle.opponent.species  %> </h3> </td>
+    </tr> -->
+    <tr>
+        <td class="td"><h3> Type: <%= @battle.user.type.name %> </h3></td>
+        <td class="td"><h3> Type: <%= @battle.opponent.type.name %> </h3></td>
     </tr>
     <tr>
-        <td><h3> Type: <%= @battle.user.type.name %> </h3></td>
-        <td><h3> Type: <%= @battle.opponent.type.name %> </h3></td>
+        <td class="td"><h3> Speed: <%= @battle.user.speed %> </h3> </td>
+        <td class="td"><h3> Speed: <%= @battle.opponent.speed %> </h3> </td>
     </tr>
     <tr>
-        <td><h3> Speed: <%= @battle.user.speed %> </h3> </td>
-        <td><h3> Speed: <%= @battle.opponent.speed %> </h3> </td>
+        <td class="td"><h3> Health Points: <%= @battle.user.hp %> </h3>  </td>
+        <td class="td"><h3> Health Points: <%= @battle.opponent.hp %> </h3> </td>
     </tr>
     <tr>
-        <td><h3> Health Points: <%= @battle.user.hp %> </h3>  </td>
-        <td><h3> Health Points: <%= @battle.opponent.hp %> </h3> </td>
+        <td class="td"><h3> Attack: <%= @battle.user.attack %> </h3> </td>
+        <td class="td"><h3> Attack: <%= @battle.opponent.attack %> </h3> </td>
     </tr>
     <tr>
-        <td><h3> Attack: <%= @battle.user.attack %> </h3> </td>
-        <td><h3> Attack: <%= @battle.opponent.attack %> </h3> </td>
+        <td class="td"><h3> Defence: <%= @battle.user.defence %> </h3> </td>
+        <td class="td"><h3> Defence: <%= @battle.opponent.defence %> </h3>  </td>
     </tr>
     <tr>
-        <td><h3> Defence: <%= @battle.user.defence %> </h3> </td>
-        <td><h3> Defence: <%= @battle.opponent.defence %> </h3>  </td>
-    </tr>
-    <tr>
-        <td><img class=image src=<%= @battle.user.image %>> </td>
-        <td><img class=image src=<%= @battle.opponent.image%>>  </td>
+        <td class="td"><img class=image src=<%= @battle.user.image %>> </td>
+        <td class="td"><img class=image src=<%= @battle.opponent.image%>>  </td>
     </tr>
     </table>
 
 </div>
 
+</div>
 
+
+
+<!-- table {
+    border-spacing: 50px 0px;
+    padding: 0px 150px;
+} -->

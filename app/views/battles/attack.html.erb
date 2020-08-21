@@ -1,6 +1,6 @@
 <%= render partial: "arena" %>
+<div class="attack" style="text-align: center; justify-content: center; font-size: 130%; line-height: 15pt;">
 
-<h3 class="attack">
 <%= "#{@attacker.species} is attacking  #{@defendant.species}" %> <br>
 <% if @attacker == @battle.user && @battle.user_strong_against? %>
     <%= "#{@attacker.species} is a #{@attacker.type.name} type and its attack is super effective against #{@defendant.type.name} types" %> <br>
@@ -27,9 +27,10 @@
     <%= "#{@attacker.species.upcase} WINS!" %>
     <%= render partial: "gameover" %>
 <% else %>
-    <%= button_to "Counterattack", counterattack_path(@battle), method: :get %>
+    <%= button_to "Counterattack", counterattack_path(@battle), method: :get, class: "homebutton" %>
 <% end %>
-</h3>
+
+</div>
 
 
     

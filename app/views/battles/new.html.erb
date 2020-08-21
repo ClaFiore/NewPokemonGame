@@ -1,11 +1,20 @@
+<img style="float: right; padding: 30px 70px; vertical-align: top; width: 40%;" src="https://www.ssbwiki.com/images/thumb/2/21/Charizard_SSBU.png/1200px-Charizard_SSBU.png">
 
-<h1 style="font-family: verdana; padding: 0 100px; justify-content: center;">
-<%= form_for @battle do |f| %>
-    <%= f.label "New Battle" %> <br> <br>
-    <%= f.label :user_id, "Pick your Pokemon" %> 
-    <%= f.collection_select :user_id, Pokemon.all, :id, :species %><br>
-        <br>
-        <br>
-    <%= f.submit "Start Battle" %>
-    <% end %>
-</h1>
+
+<div style="font-family: verdana; padding: 80px 100px 0 0; justify-content: center; text-align: center;">
+            <h1 class="titles">New Battle</h1>
+</div>
+<div style="font-family: verdana; padding: 0 0; text-align: center;">
+            <%= form_for @battle do |f| %>
+            <%= f.label :user_id, "Pick your Pokemon" %> 
+            <%= f.collection_select :user_id, Pokemon.all, :id, :species %>
+            <%= f.submit "Start Battle", class: "homebutton" %>
+            <% end %>
+ 
+</div>
+<br>
+
+
+<br>
+
+<img style="float: left; padding: 30px 50px; vertical-align: bottom; width: 30%;" src="https://cdn.bulbagarden.net/upload/7/73/002Ivysaur.png">

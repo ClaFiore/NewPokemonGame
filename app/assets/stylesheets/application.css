@@ -1,24 +1,39 @@
 @import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
 .image {
-    max-width: 50%;
-    max-width: 50%;
+    max-width: 90%;
+    max-height: fit-content;
 }
 
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    color: #3D7DCA !important;
 }
 
-table {
-    border-spacing: 50px 0px;
-    padding: 0px 150px;
+.td {
+    width: 1.5em;
+    height: 1.5em;
+    background:  #ffcb05;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+  }
+
+.center {
+    text-align: center; 
+    justify-content: center; 
+    margin-left:auto; 
+    margin-right:auto; 
+    width:800px;
+    border-spacing: 50px 0;
 }
+
 
 .vs{
-    padding: 0px 350px;
+    text-align: center;
 }
 
 .title{
-    padding: 0px 300px;
+    text-align: center;
 }
 
 .home_table{
@@ -27,25 +42,54 @@ table {
 
 .pokelogo{
     padding: 50px 200px;
+    justify-content: center;
 }
 
 .pokebattleimg{
     padding: 50px 300px;
     justify-content: center;
+    display: block; 
+    width: 10%;
 }
 
 .attack_button{
-    padding: 50px 600px;
+    text-align: center;
 }
 
 .attack{
-    padding: 0px 500px;
+    text-align: center;
+    padding: 10px 300px;
 }
 
 .gameover{
-    padding: 0 500px;
+    text-align: center;
 }
 
 .new_battle{
     padding: 50px 250px;
+}
+
+.arena_battle_image{
+    display: flex;
+  justify-content: center;
+}
+
+.homebutton{
+    background-color: #3D7DCA;
+    color: #ffcb05;
+    border-radius: 4px;
+    outline:none;
+}
+
+.link {
+    color: #3D7DCA !important;
+    font-family: Arial, Helvetica, sans-serif  !important;
+    font-size: 140%;
+}
+
+.titles {
+    color: #3D7DCA !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 350%;
+    letter-spacing: 2px;
 }

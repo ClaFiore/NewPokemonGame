@@ -9,9 +9,9 @@ class BattlesController < ApplicationController
   end
 
   def create
-    @battle = Battle.create(battle_params)
+    @battle = Battle.new
     @battle.opponent = Pokemon.all.sample
-    @battle.save
+    @battle = Battle.create(user_id: params["battle"]["user_id"], opponent_id: @battle.opponent.id)
     redirect_to battle_path(@battle)
   end
 

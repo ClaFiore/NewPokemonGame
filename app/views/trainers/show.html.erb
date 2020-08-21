@@ -1,7 +1,18 @@
-<h1> <%= @trainer.name %>'s Team </h1>
-<ol>
+<img style="float: right; padding: 10px 100px; vertical-align: top; width: 50%;" src=<%=@trainer.image%>>
+
+<h1 class="titles" style="padding: 20px 50px; justify-content: center;"> <%= @trainer.name %>'s Team </h1>
+<div style="padding: 10px 50px;">
+
+<div class="ui grid">
 <% @trainer.pokemons.each do |p| %>
-  <li>  <%= link_to p.species, pokemon_path(p) %> </li>
+  <div class="four wide column"><h4 class="link"><%= link_to p.species, pokemon_path(p)%></h4><img style="display:block; width: 80%" src=<%= p.image%>></div>
 <% end %>
-</ol>
-<img class="image" src=<%=@trainer.image%>>
+</div>
+
+</div>
+<br>
+    <h3 style="padding: 0 50px;"><%= button_to "Build Team", edit_trainer_path(@trainer), method: :get, class: "homebutton" %></h3>
+    <h3 style="padding: 0 50px;"><%= button_to "All Trainers", trainers_path, method: :get, class: "homebutton" %></h3>
+    <h3 style="padding: 0 50px;"><%= button_to "Homepage", home_path, method: :get, class: "homebutton" %></h3>
+
+

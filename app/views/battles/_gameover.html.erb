@@ -1,7 +1,7 @@
 <h3 class="gameover"> GAME OVER 
 <% if @battle.user.hp == 0  %>
-<h3 class="gameover"><%= button_to "Start New Game", pokemon_path(@battle.user), method: :delete %></h3>
+<h3 class="gameover"><%= button_to "Start New Game", pokemon_path(@battle.user), method: :delete, class: "homebutton" %></h3>
 <% else %>
-<h3 class="gameover"><%= button_to "Start New Game", pokemon_path(@battle.opponent), method: :delete %></h3>
+<h3 class="gameover"><%= button_to "Start New Game", pokemon_path(@battle.opponent), method: :delete, class: "homebutton" %></h3>
 <% end %>
 </h3>
