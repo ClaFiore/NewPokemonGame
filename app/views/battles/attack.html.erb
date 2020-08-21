@@ -1,7 +1,7 @@
 <%= render partial: "arena" %>
-<div class="attack" style="text-align: center; justify-content: center; font-size: 130%; line-height: 15pt;">
+<div class="attack" style="text-align: center; justify-content: center; font-size: 130%; line-height: 15pt; background-color: #ffcb05;">
 
-<%= "#{@attacker.species} is attacking  #{@defendant.species}" %> <br>
+<%= "#{@attacker.species} is attacking  #{@defendant.species}" %> 
 <% if @attacker == @battle.user && @battle.user_strong_against? %>
     <%= "#{@attacker.species} is a #{@attacker.type.name} type and its attack is super effective against #{@defendant.type.name} types" %> <br>
     <%= "#{@attacker.species}'s power has doubled" %>
