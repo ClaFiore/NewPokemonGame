@@ -12,7 +12,16 @@ class BattlesController < ApplicationController
     @battle = Battle.new
     @battle.opponent = Pokemon.all.sample
     @battle = Battle.create(user_id: params["battle"]["user_id"], opponent_id: @battle.opponent.id)
-    redirect_to battle_path(@battle)
+    if @battle.valid?
+      @battle.save
+      redirect_to battle_path(@battle)
+    else
+      array_ids = Pokemon.all.map {|p| p.id}
+      deleted_id = array_ids.delete(params["battle"]["user_id"].to_i)
+      @battle.update(opponent_id: array_ids.sample)
+      byebug
+      redirect_to battle_path(@battle)
+    end
   end
 
   def attack

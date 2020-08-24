@@ -1,15 +1,15 @@
 class Battle < ApplicationRecord
     belongs_to :user, class_name: 'Pokemon'
     belongs_to :opponent, class_name: 'Pokemon'
-    validates_uniqueness_of :user_id, scope: :opponent_id
+    #validates_uniqueness_of :user_id, scope: :opponent_id
    
     validate :disallow_self_referential_pokemon
 
-  def disallow_self_referential_pokemon
-    if user_id == opponent_id
-      errors.add(:opponent_id, 'cannot challenge same pokemon')
+    def disallow_self_referential_pokemon
+        if user_id == opponent_id
+        errors.add(:opponent_id, 'cannot challenge same pokemon')
+        end
     end
-  end
 
 
     def user_attack_first? #return true or false
@@ -23,6 +23,8 @@ class Battle < ApplicationRecord
     def user_strong_against?
         if self.user.type.name == "Water" && self.opponent.type.name == "Fire" || self.user.type.name == "Water" && self.opponent.type.name == "Rock" || self.user.type.name == "Water" && self.opponent.type.name == "Ground"
             return true
+        elsif self.user.type.name == "Normal"
+            return false
         elsif self.user.type.name == "Fire" && self.opponent.type.name == "Grass" || self.user.type.name == "Fire" && self.opponent.type.name == "Ice" || self.user.type.name == "Fire" && self.opponent.type.name == "Bug" 
             return true
         elsif self.user.type.name == "Electric" && self.opponent.type.name == "Water" || self.user.type.name == "Electric" && self.opponent.type.name == "Flying"
@@ -45,8 +47,6 @@ class Battle < ApplicationRecord
             return true
         elsif self.user.type.name == "Rock" && self.opponent.type.name == "Fire" || self.user.type.name == "Rock" && self.opponent.type.name == "Ice" || self.user.type.name == "Rock" && self.opponent.type.name == "Flying" || self.opponent.type.name == "Bug"
             return true
-        elsif self.user.type.name == "Normal"
-            return false
         else
             return false
         end     
@@ -55,6 +55,8 @@ class Battle < ApplicationRecord
     def opponent_strong_against?
         if self.opponent.type.name == "Water" && self.user.type.name == "Fire" || self.opponent.type.name == "Water" && self.user.type.name == "Rock" || self.opponent.type.name == "Water" && self.user.type.name == "Ground"
             return true
+        elsif self.opponent.type.name == "Normal"
+            return false
         elsif self.opponent.type.name == "Fire" && self.user.type.name == "Grass" || self.opponent.type.name == "Fire" && self.user.type.name == "Ice" || self.opponent.type.name == "Fire" && self.user.type.name == "Bug" 
             return true
         elsif self.opponent.type.name == "Electric" && self.user.type.name == "Water" || self.opponent.type.name == "Electric" && self.user.type.name == "Flying"
@@ -77,8 +79,6 @@ class Battle < ApplicationRecord
             return true
         elsif self.opponent.type.name == "Rock" && self.user.type.name == "Fire" || self.opponent.type.name == "Rock" && self.user.type.name == "Ice" || self.opponent.type.name == "Rock" && self.user.type.name == "Flying" ||self.opponent.type.name == "Rock" && self.user.type.name == "Bug"
             return true
-        elsif self.opponent.type.name == "Normal"
-            return false
         else 
             return false
         end     
